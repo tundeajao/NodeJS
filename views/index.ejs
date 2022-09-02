@@ -19,10 +19,10 @@
         </nav>
         <div class="blogs content">
             <h2>All Blogs</h2>
-            <% if (locals.blogs.length > 0) { %>
-                <% locals.blogs.forEach(blog => {%>
-                    <h3 class="title"><%= locals.blog.title %></h3>
-                    <p class="snippet"><%= locals.blog.snippet %></p>
+            <% if (blogs.length > 0) { %>
+                <% blogs.forEach(blog => {%>
+                    <h3 class="title"><%= blog.title %></h3>
+                    <p class="snippet"><%= blog.snippet %></p>
                 <% }) %>
             <% } %>
         </div>

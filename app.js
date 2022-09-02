@@ -6,17 +6,16 @@ app.set('view engine', 'ejs');
 app.listen(3000);
 
 app.get('/', (req, res) => {
-    //res.sendFile('./views/index.html', {root:__dirname});
-    res.render('index', {title: 'Home'});
-});
-
-app.get('/about', (req, res) => {
     const blogs = [
         {title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur'},
         {title: 'Mario finds stars', snippet: 'Lorem ipsum dolor sit amet consectetur'},
         {title: 'How to defeat bowser', snippet: 'Lorem ipsum dolor sit amet consectetur'}
       ];
-    res.render('about', {title: 'About', blogs});
+    res.render('index', {title: 'Home', blogs});
+});
+
+app.get('/about', (req, res) => {
+    res.render('about', {title: 'About'});
 });
 
 app.get('/about-me', (req, res) => {
