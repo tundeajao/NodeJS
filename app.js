@@ -11,8 +11,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-    //res.sendFile('./views/about.html', {root:__dirname});
-    res.render('about', {title: 'About'});
+    const blogs = [
+        {title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur'},
+        {title: 'Mario finds stars', snippet: 'Lorem ipsum dolor sit amet consectetur'},
+        {title: 'How to defeat bowser', snippet: 'Lorem ipsum dolor sit amet consectetur'}
+      ];
+    res.render('about', {title: 'About', blogs});
 });
 
 app.get('/about-me', (req, res) => {
