@@ -6,7 +6,7 @@ app.set('view engine', 'ejs');
 //app.set('views', 'myviews');
 
 app.listen(3000);
-
+app.use(express.static('public'));
 app.use(morgan('tiny'));
 
 //index/home
