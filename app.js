@@ -1,9 +1,13 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
+const dbURI = 'mongodb+srv://netninja:12May2006@cluster0.g4o2u.mongodb.net/node-tuts?retryWrites=true&w=majority';
 
 const app = express();
 app.set('view engine', 'ejs');
 //app.set('views', 'myviews');
+
+mongoose.connect(dbURI);
 
 app.listen(3000);
 app.use(express.static('public'));
