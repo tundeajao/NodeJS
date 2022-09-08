@@ -15,22 +15,6 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('tiny'));
 
-app.get('/add-blog', (req, res) => {
-    const blog = new Blog({
-        title: 'new blog 2',
-        snippet: 'about my new blog',
-        body: 'more about my new blog'
-    });
-
-    blog.save()
-    .then((result) => {
-        res.send(result);
-    })
-    .catch((err) => {
-        console.log(err);
-    });
-});
-
 //index/home
 app.get('/', (req, res) => {
     res.redirect('blogs');
@@ -44,7 +28,7 @@ app.get('/about-me', (req, res) => {
     res.redirect('/about');
 });
 
-app.use(blogRoutes);
+app.use('/blogs', blogRoutes);
 
 //404 Request
 app.use((req, res)=> {
